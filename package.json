@@ -1,0 +1,32 @@
+{
+  "name": "payment-service-provider",
+  "version": "1.0.0",
+  "description": "Simple payment service provider ",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon ./index.js localhost 3001",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksetoue/payment-service-provider.git"
+  },
+  "author": "ksetoue",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ksetoue/payment-service-provider/issues"
+  },
+  "homepage": "https://github.com/ksetoue/payment-service-provider#readme",
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "cross-env": "^6.0.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1"
+  }
+}
