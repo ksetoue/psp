@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/ksetoue/payment-service-provider#readme",
   "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-plugin-import": "^2.18.2",
     "jest": "^24.9.0",
     "nodemon": "^1.19.4"
   },
