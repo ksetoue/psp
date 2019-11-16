@@ -1,11 +1,25 @@
 {
   "name": "payment-service-provider",
   "version": "1.0.0",
-  "description": "Simple payment service provider ",
-  "main": "index.js",
+  "description": "Simple payment service provider",
+  "main": "./app/app.js",
+  "jest": {
+    "verbose": true,
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
+  },
   "scripts": {
-    "start:dev": "nodemon ./index.js localhost 3001",
-    "test": "jest"
+    "buildDev": "rm -rf dist && webpack --mode development --config webpack.config.js",
+    "buildProd": "rm -rf dist && webpack --mode production --config webpack.config.js",
+    "build": "rm -rf dist && webpack --mode development",
+    "start": "node ./dist/server.js",
+    "dev": "nodemon --exec babel-node ./app/app.js",
+    "lint": "eslint app config tests --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "clean": "rimraf dist",
+    "watch":  "nodemon ./app/app.js"
   },
   "repository": {
     "type": "git",
@@ -18,19 +32,31 @@
   },
   "homepage": "https://github.com/ksetoue/payment-service-provider#readme",
   "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/node": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "babel-loader": "^8.0.6",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-import-resolver-webpack": "^0.11.1",
     "eslint-plugin-import": "^2.18.2",
     "jest": "^24.9.0",
-    "nodemon": "^1.19.4"
+    "nodemon": "^1.19.4",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "cross-env": "^6.0.3",
     "dotenv": "^8.2.0",
+    "dotenv-webpack": "^1.7.0",
     "express": "^4.17.1",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "npm-run-all": "^4.1.5",
+    "pg": "^7.12.1",
+    "pg-hstore": "^2.3.3",
+    "rimraf": "^3.0.0"
   }
 }
