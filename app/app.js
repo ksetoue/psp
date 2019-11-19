@@ -1,16 +1,15 @@
 // console.log('Service running on port:', process.env.PORT);
-import dotenv from 'dotenv';
-import express from 'express';
+const dotenv = require('dotenv');
+const express = require('express');
+const Routes = require('./src/routes/routes.js');
+
+const PORT = process.env.PORT || 8080
+const app = express()
 
 dotenv.config();
 
-const PORT = process.env.PORT || 8080
-
-const app = express()
-app.get('*', (req, res) => {
-    res.json('response');
-})
-
+app.use(express.json());
+app.use(Routes);
 
 app.listen(PORT, () => {
     console.log(`Service is listening to ${PORT}....`)
