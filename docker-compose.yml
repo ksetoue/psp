@@ -1,0 +1,59 @@
+version: "3.5"
+
+services:
+
+  payment_db:
+    image: postgres:latest
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - 5433:5432
+    networks:
+      - payment_db
+    volumes:
+      - payment_db_data:/var/lib/postgresql/data
+
+  paymentservice:
+    image: paymentservice:1.0
+    build:
+      context: .
+      dockerfile: paymentservice.dockerfile
+      args:
+        NODE_ENV: ${NODE_ENV}
+        DB_HOST: ${DB_HOST}
+        DB_NAME: ${DB_NAME}
+        DB_PORT: ${DB_PORT}
+        DB_USER: ${DB_USER}
+        DB_PASSWORD: ${DB_PASSWORD}
+    command: >
+      sh -c "npm run build && npm run start"
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      DB_HOST: ${DB_HOST}
+      DB_NAME: ${DB_NAME}
+      DB_PORT: ${DB_PORT}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "3000:3000"
+    networks:
+      - payment_db
+    depends_on:
+      - payment_db
+    links:
+      - payment_db:postgres
+    volumes:
+      - ./:/paymentservice_data
+
+
+networks:
+  payment_db:
+    driver: bridge
+
+
+volumes:
+  payment_db_data:
+  paymentservice_data:
