@@ -1,6 +1,7 @@
 const dotenv = require('dotenv')
-
-dotenv.config()
+require('dotenv').config({
+  path: process.env.DOTENV_PATH,
+});
 
 module.exports = {
   host: process.env.DB_HOST,

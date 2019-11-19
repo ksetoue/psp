@@ -34,3 +34,5 @@ RUN npm install -g nodemon
 RUN npm install
 
 COPY . .
+
+RUN chmod +x dbconfig.sh
