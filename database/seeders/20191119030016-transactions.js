@@ -17,7 +17,6 @@ module.exports = {
         cardExpirationDate: '06/21',
         description: 'Pied Piper Coin',
         createdAt: new Date(),
-        updatedAt: new Date(),
       },
     ], {});
   },

@@ -58,12 +58,6 @@ module.exports = {
         allowNull: false,
     },
 
-    updatedAt: {
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.NOW,
-        allowNull: false,
-    },
-
     deletedAt: {
         type: Sequelize.DATE,
     },
