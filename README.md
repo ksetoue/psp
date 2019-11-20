@@ -11,6 +11,8 @@ This first version has a shared database between entities all entities related t
 
 [Detailed design of the current architecture can be found here](https://github.com/ksetoue/payment-service-provider/blob/master/resources/architecture.png).
 
+[API details](https://github.com/ksetoue/psp/blob/master/api-doc.md)
+
 ## Setup
 
 1. Setup `.env`:
