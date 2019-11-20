@@ -1,3 +1,9 @@
+/**
+ * @name transaction
+ * @description This module handles transaction model for sequelize  '
+ *
+ * @module transaction
+ */
 const paymentMethods = Object.freeze({
     DEBIT: 'debit',
     CREDIT: 'credit',

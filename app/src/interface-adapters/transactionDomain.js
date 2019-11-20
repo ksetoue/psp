@@ -1,3 +1,8 @@
+/**
+ * @name transactionDomain
+ * @description This module handles transaction interface with db models'
+ *
+ */
 const { transaction: transactionModel } = require('../models');
 
 const domain = {

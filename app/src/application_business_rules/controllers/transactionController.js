@@ -1,3 +1,8 @@
+/**
+ * @name transactionController
+ * @description This module handles redirects from routes to the transaction service'
+ *
+ */
 const transactionService = require('../services/transactionService');
 
 const controller = {

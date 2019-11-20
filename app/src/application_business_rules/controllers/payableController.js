@@ -1,3 +1,8 @@
+/**
+ * @name payableController
+ * @description This module handles redirects from routes to the payable domain, and returns the amount of avialable payments'
+ *
+ */
 const payableDomain = require('../../interface-adapters/payableDomain');
 
 const controller = {

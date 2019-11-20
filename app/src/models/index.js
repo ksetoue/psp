@@ -1,3 +1,9 @@
+/**
+ * @name models
+ * @description This module maps other models inside this folder  '
+ *
+ * @module models
+ */
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');

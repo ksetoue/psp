@@ -1,3 +1,8 @@
+/**
+ * @name payableDomain
+ * @description This module handles transaction interface with db models'
+ *
+ */
 const moment = require('moment');
 const { payable: payableModel } = require('../models');
 

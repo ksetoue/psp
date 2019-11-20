@@ -3,6 +3,12 @@ const status =  Object.freeze({
     WAITING_FUNDS: 'waiting_funds',
 });
 
+/**
+ * @name payable
+ * @description This module handles payable model for sequelize  '
+ *
+ * @module payable
+ */
 module.exports = (sequelize, DataTypes) => {
     const payable = sequelize.define('payable', {
         transactionId: {

@@ -1,3 +1,9 @@
+/**
+ * @name client
+ * @description This module handles client model for sequelize  '
+ *
+ * @module client
+ */
 module.exports = (sequelize, DataTypes) => {
     const client = sequelize.define('client', {
         name: {

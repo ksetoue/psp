@@ -1,3 +1,8 @@
+/**
+ * @name transactionService
+ * @description This module handles application business rules for transactions, and interfaces between the http requests and data changes'
+ *
+ */
 const payableDomain = require('../../interface-adapters/payableDomain');
 const transactionDomain = require('../../interface-adapters/transactionDomain');
 
