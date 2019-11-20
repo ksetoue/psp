@@ -5,7 +5,7 @@ const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   entry: {
-    server: './app/app.js',
+    server: './app/src/app.js',
   },
 
   output: {

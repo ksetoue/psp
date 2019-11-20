@@ -2,7 +2,7 @@
   "name": "payment-service-provider",
   "version": "1.0.0",
   "description": "Simple payment service provider",
-  "main": "./app/app.js",
+  "main": "./app/src/app.js",
   "jest": {
     "verbose": true,
     "testMatch": [
@@ -14,12 +14,12 @@
     "buildProd": "rm -rf dist && webpack --mode production --config webpack.config.js",
     "build": "rm -rf dist && webpack --mode development",
     "start": "node ./dist/server.js",
-    "dev": "nodemon --exec babel-node ./app/app.js",
+    "dev": "nodemon --exec babel-node ./app/src/app.js",
     "lint": "eslint app config tests --fix",
     "test": "jest",
     "test:watch": "jest --watch",
     "clean": "rimraf dist",
-    "watch": "nodemon ./app/app.js"
+    "watch": "nodemon ./app/src/app.js"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
   "devDependencies": {
     "@babel/core": "^7.7.2",
     "@babel/node": "^7.7.0",
+    "@babel/plugin-transform-runtime": "^7.6.2",
     "@babel/preset-env": "^7.7.1",
     "babel-loader": "^8.0.6",
     "eslint": "^6.6.0",
@@ -47,12 +48,15 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
+    "@babel/runtime": "^7.7.2",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "cross-env": "^6.0.3",
     "dotenv": "^8.2.0",
     "dotenv-webpack": "^1.7.0",
     "express": "^4.17.1",
+    "glob": "^7.1.6",
+    "moment": "^2.24.0",
     "morgan": "^1.9.1",
     "npm-run-all": "^4.1.5",
     "pg": "^7.12.1",
