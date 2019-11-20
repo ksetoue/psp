@@ -20,7 +20,6 @@ module.exports = {
         fee: 5,
         amount: 95.00,
         paymentDate: new Date(),
-        createdAt: new Date(),
       },
     ], {});
   },

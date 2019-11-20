@@ -1,20 +1,23 @@
 const express = require('express');
+const transactionController = require('../application_business_rules/controllers/transactionController');
+const payableController = require('../application_business_rules/controllers/payableController');
+
 const routes = express.Router();
 
-routes.get('/', (request, response) => response.json({
-    message: 'Up!',
-}));
+// TODO: refactor to read route files and load them into an object that can be passed to routes
+routes.post(
+    '/new-transaction',
+    transactionController.new,
+);
         
-        // routes.get(
-        //     '/transactions',
-        // );
+routes.get(
+    '/transactions',
+    transactionController.list,
+);
         
-        // routes.post(
-        //     '/new-transaction',
-        // );
-        
-        // routes.get(
-        //     '/payables',
-        // );  
+routes.get(
+    '/payables',
+    payableController.getBalance,
+);  
 
 module.exports = routes;
