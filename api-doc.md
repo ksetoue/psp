@@ -36,7 +36,7 @@ Returns a list of transactions.
 }
 ```
 
-### `[POST] /transactions`
+### `[POST] /new-transaction`
 
 Processing/create a transaction.
 
