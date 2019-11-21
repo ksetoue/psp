@@ -1,3 +1,4 @@
+// TODO: Generate input using factories
 const sequelize = require('sequelize');
 const transactionService = require('../../src/application_business_rules/services/transactionService');
 
