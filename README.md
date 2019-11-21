@@ -35,3 +35,9 @@ $ ./dbconfig.sh
 ```
 
 All set :) 
+
+### Test
+After your container is up, run:
+```sh
+$ docker exec -it psp_paymentservice_1 npm run test
+```
